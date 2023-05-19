@@ -1,6 +1,5 @@
 function TodoItem() {
-    return
-    (
+    return (
         <li>
             <span>V</span>
             <p>Cambiar pilas a control VR</p>

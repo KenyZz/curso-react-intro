@@ -1,6 +1,5 @@
 function ToDoFilter() {
-    return
-    (
+    return (
         <input placeholder="Jugar billar de bolsillo" />
     )
 }
