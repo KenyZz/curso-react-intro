@@ -1,0 +1,117 @@
+/* .ToDoItem
+{
+    background-color: #4C4C6D;
+    border-color: 1px solid cadetblue;
+    position: relative;
+    display: flex;
+    width: 600px;
+    height: 50px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    box-shadow: 0 5px 50px rgba(32, 35, 41, 0);
+}
+
+.ToDoItem-p
+{
+    margin: 24px 0 24px 24px;
+    color: whitesmoke;
+}
+
+.ToDoItem-p--complete
+{
+    text-decoration: line-through;
+}
+
+.Icon
+{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Icon-check
+{
+    position: absolute;
+    left: 12px;
+}
+
+.Icon-check--active
+{
+    color: greenyellow;
+}
+
+.Icon-delete
+{
+    position: absolute;
+    top: -24px;
+    right: 0;
+}
+
+.Icon-delete:hover
+{
+    color: red;
+} */
+
+.todoItem {
+    background-color: #4C4C6D;
+    position: relative;
+    border-radius: 50px;
+    width: 600px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    margin: 0.4rem 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.todoItem .check {
+    background: url("./assets/circle-check-icon.svg") no-repeat;
+    background-size: 90%;
+    background-position: center center;
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.todoItem .check--active {
+    background: url("./assets/circle-check-icon.svg") no-repeat;
+    color: greenyellow;
+    background-size: 90%;
+    background-position: center center;
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.todoItem p {
+    width: 70%;
+    /*   height: 100%; */
+}
+
+.todoItem .close-item {
+    background: url("./assets/circle-delete-icon.svg") no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    width: 2.4em;
+    height: 2.4em;
+    border: none;
+    cursor: pointer;
+}
+
+.todoItem .close-item:hover {
+    background: url("./assets/delete-left-icon.svg") no-repeat;
+    background-size: 90%;
+    background-position: center center;
+}

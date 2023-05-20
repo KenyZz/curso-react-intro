@@ -10,8 +10,6 @@ const defaultToDo = [
   { text: "Jugar Onward", completed: false},
   { text: "Comer", completed: true },
   { text: "Ir al centro", completed: false },
-  { text: "beber 2 lt de agua", completed: true },
-  { text: "Curso typescript", completed: false },
   ];
 
 function App() {

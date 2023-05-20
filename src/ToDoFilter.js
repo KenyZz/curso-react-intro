@@ -1,6 +1,16 @@
-function ToDoFilter() {
+import "./ToDoFilter.css"
+import searchIcon from "./assets/search-icon.svg";
+
+function ToDoFilter({ searchValue, setSearchValue}) {
     return (
-        <input placeholder="Jugar billar de bolsillo" />
+        <div className="search-container">
+            <input 
+            value={searchValue}
+            placeholder="Practicar piano, etc."
+            onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <img className="search-icon" src={searchIcon} alt="search icon"/>
+        </div>
     )
 }
 

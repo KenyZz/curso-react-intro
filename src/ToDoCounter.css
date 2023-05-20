@@ -1,0 +1,17 @@
+.ToDoCounter
+{
+    color: #454545;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .ToDoCounter 
+    {
+    font-size: x-large;
+    }
+}

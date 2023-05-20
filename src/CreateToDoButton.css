@@ -1,0 +1,53 @@
+.ButtonAdd
+{
+    background-color: #AAC8A7;
+    box-shadow: 0px 5px 25px rgb(246, 255, 222);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 50px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    font-weight: bold;
+    color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 64px;
+
+    transform: rotate(0);
+    transition: .3s ease;
+}
+
+.ButtonAdd:hover
+{
+    transform: rotate(224deg);
+}
+
+@media (max-width: 640px) 
+{
+    .ButtonAdd
+    {
+        background-color: #537188;
+        box-shadow: none;
+        border-radius: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        transform: none;
+        transition: none;
+    }
+
+    .ButtonAdd:hover 
+    {
+        transform: none;
+    }
+}
