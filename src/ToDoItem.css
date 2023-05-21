@@ -60,7 +60,7 @@
 } */
 
 .todoItem {
-    background-color: #4C4C6D;
+    background-color: #CBB279;
     position: relative;
     border-radius: 50px;
     width: 600px;
@@ -85,7 +85,7 @@
 }
 
 .todoItem .check--active {
-    background: url("./assets/circle-check-icon.svg") no-repeat;
+    background: url("./assets/circle-check-icon-green.svg") no-repeat;
     color: greenyellow;
     background-size: 90%;
     background-position: center center;
@@ -111,7 +111,38 @@
 }
 
 .todoItem .close-item:hover {
-    background: url("./assets/delete-left-icon.svg") no-repeat;
+    background: url("./assets/circle-delete-icon-red.svg") no-repeat;
     background-size: 90%;
     background-position: center center;
+}
+
+@media (max-width: 640px)
+{
+    .todoItem 
+    {
+        width: 360px;
+        height: 2rem;
+        margin: 1rem 6px;
+        font-size: smaller;
+    }
+
+    .todoItem .close-item 
+    {
+        background-size: 70%;
+    }
+
+    .todoItem .close-item:hover 
+    {
+        background-size: 70%;
+    }
+
+    .todoItem .check 
+    {
+        background-size: 70%;
+    }
+
+    .todoItem .check--active 
+    {
+        background-size: 70%;
+    }
 }

@@ -3,7 +3,7 @@ import { ToDoFilter } from './ToDoFilter';
 import { CreateToDoButton } from './CreateToDoButton';
 import { ToDoList } from './ToDolist';
 import { TodoItem } from './ToDoItem';
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const defaultToDo = [
@@ -13,6 +13,7 @@ const defaultToDo = [
   ];
 
 function App() {
+    const [searchValue, setSearchValue] = useState("");
   return (
     <React.Fragment>
       <header className="App-header">
