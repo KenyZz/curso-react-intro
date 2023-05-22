@@ -76,7 +76,7 @@
 
 .todoItem .check {
     background: url("./assets/circle-check-icon.svg") no-repeat;
-    background-size: 90%;
+    background-size: 100%;
     background-position: center center;
     width: 2.5em;
     height: 2.5em;
