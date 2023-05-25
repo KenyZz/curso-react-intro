@@ -62,7 +62,7 @@
 .todoItem {
     background-color: #CBB279;
     position: relative;
-    border-radius: 50px;
+    border-radius: 0px 50px 50px 0px;
     width: 600px;
     list-style: none;
     display: flex;
@@ -74,18 +74,16 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.todoItem .check {
-    background: url("./assets/circle-check-icon.svg") no-repeat;
+/* .todoItem .check {
     background-size: 100%;
     background-position: center center;
     width: 2.5em;
     height: 2.5em;
     border: none;
     cursor: pointer;
-}
+} */
 
-.todoItem .check--active {
-    background: url("./assets/circle-check-icon-green.svg") no-repeat;
+/* .todoItem .check--active {
     color: greenyellow;
     background-size: 90%;
     background-position: center center;
@@ -93,27 +91,45 @@
     height: 2.5em;
     border: none;
     cursor: pointer;
-}
+} */
 
 .todoItem p {
     width: 70%;
     /*   height: 100%; */
 }
 
-.todoItem .close-item {
-    background: url("./assets/circle-delete-icon.svg") no-repeat;
+/* .todoItem .close-item {
     background-size: 100%;
     background-position: center center;
     width: 2.4em;
     height: 2.4em;
     border: none;
     cursor: pointer;
-}
+} */
 
-.todoItem .close-item:hover {
-    background: url("./assets/circle-delete-icon-red.svg") no-repeat;
+/* .todoItem .close-item:hover {
     background-size: 90%;
     background-position: center center;
+} */
+
+.Icon-svg, .Icon-delete-svg
+{
+    background-size: 100%;
+    background-position: center center;
+    width: 1.4em;
+    height: 2.4em;
+    border: none;
+    cursor: pointer;
+}
+
+.todoItem .close-item:hover .Icon-delete-svg
+{
+    fill: red;
+}
+
+.todoItem .check:hover .Icon-svg
+{
+    fill: green;
 }
 
 @media (max-width: 640px)
