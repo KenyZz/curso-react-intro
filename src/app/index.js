@@ -1,9 +1,10 @@
-import { ToDoCounter } from './ToDoCounter';
-import { ToDoFilter } from './ToDoFilter';
-import { CreateToDoButton } from './CreateToDoButton';
-import { ToDoList } from './ToDolist';
-import { TodoItem } from './ToDoItem';
+import { ToDoCounter } from '../ToDoCounter/ToDoCounter';
+import { ToDoFilter } from '../ToDoFilter/ToDoFilter';
+import { CreateToDoButton } from '../CreateToDoButton/CreateToDoButton';
+import { ToDoList } from '../ToDoList/ToDolist';
+import { TodoItem } from '../ToDoItem/ToDoItem';
 import React, { useState } from 'react';
+import { useLocalStorage } from './useLocalStorage';
 import './App.css';
 
 /* const defaultToDo = [
@@ -12,29 +13,6 @@ import './App.css';
   { text: "Ir al centro", completed: false },
 ];
 localStorage.setItem("POPSICLETODO_V1", JSON.stringify(defaultToDo)); */
-
-function useLocalStorage (itemName, initialValue) {
-  const localStorageItem = localStorage.getItem(itemName);
-  let parsedItem;
-  
-  if (!localStorageItem) 
-  {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  } else
-  {
-    parsedItem = JSON.parse(localStorageItem);
-  }
-
-  const [item, setItem] = useState(parsedItem);
-
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem))
-    setItem(newItem);
-  };
-
-  return [item, saveItem];
-}
 
 function App() {
   const [todos, saveToDos] = useLocalStorage("POPSICLETODO_V1", []);

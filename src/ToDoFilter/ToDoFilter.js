@@ -1,6 +1,6 @@
 import React from "react";
 import "./ToDoFilter.css"
-import searchIcon from "./assets/search-icon.svg";
+import searchIcon from "../assets/search-icon.svg";
 
 function ToDoFilter({ searchValue, setSearchValue}) {
     return (
