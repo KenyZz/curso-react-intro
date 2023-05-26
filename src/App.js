@@ -13,33 +13,37 @@ import './App.css';
 ];
 localStorage.setItem("POPSICLETODO_V1", JSON.stringify(defaultToDo)); */
 
-function App() {
-  const localStorageToDos = localStorage.getItem("POPSICLE_V1");
-  let parsedToDos;
+function useLocalStorage (itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem;
   
-  if (!localStorageToDos) 
+  if (!localStorageItem) 
   {
-    localStorage.setItem("POPSICLETODO_V1", JSON.stringify([]));
-    parsedToDos = [];
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
   } else
   {
-    parsedToDos = JSON.parse(localStorageToDos);
+    parsedItem = JSON.parse(localStorageItem);
   }
-  
 
-  const [todos, setTodos] = useState(parsedToDos);
+  const [item, setItem] = useState(parsedItem);
+
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem))
+    setItem(newItem);
+  };
+
+  return [item, saveItem];
+}
+
+function App() {
+  const [todos, saveToDos] = useLocalStorage("POPSICLETODO_V1", []);
   const [searchValue, setSearchValue] = useState("");
   
   const completedToDos = todos.filter(todo => !!todo.completed).length;
   const totalToDos = todos.length;
 
   const searchedTodos = todos.filter((todo) => {return todo.text.toLowerCase().includes(searchValue.toLocaleLowerCase());});
-
-  const saveToDos = () => {
-    localStorage.setItem("POPSICLETODO_V1", JSON.stringify(newTodos))
-
-    setTodos(newTodos);
-  };
 
   const toDoComplete = (text) => {
     const newTodos = [...todos];
