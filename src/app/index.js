@@ -1,10 +1,6 @@
-import { ToDoCounter } from '../ToDoCounter/ToDoCounter';
-import { ToDoFilter } from '../ToDoFilter/ToDoFilter';
-import { CreateToDoButton } from '../CreateToDoButton/CreateToDoButton';
-import { ToDoList } from '../ToDoList/ToDolist';
-import { TodoItem } from '../ToDoItem/ToDoItem';
 import React, { useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
+import { AppUI } from './AppUI';
 import './App.css';
 
 /* const defaultToDo = [
@@ -15,7 +11,12 @@ import './App.css';
 localStorage.setItem("POPSICLETODO_V1", JSON.stringify(defaultToDo)); */
 
 function App() {
-  const [todos, saveToDos] = useLocalStorage("POPSICLETODO_V1", []);
+  const {
+    item: todos,
+    saveItem: saveToDos,
+    loading,
+    error,
+  } = useLocalStorage("POPSICLE_V1", []);
   const [searchValue, setSearchValue] = useState("");
   
   const completedToDos = todos.filter(todo => !!todo.completed).length;
@@ -37,32 +38,19 @@ function App() {
     saveToDos(newTodos);
   }
 
-  return (
-    <React.Fragment>
-      <header className="App-header">
-        
-        <ToDoCounter completed={completedToDos} total={totalToDos}/>
-        <ToDoFilter 
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
-
-        <ToDoList>
-          {searchedTodos.map(todo => (
-            <TodoItem 
-            key={todo.text} 
-            text={todo.text} 
-            completed={todo.completed}
-            onComplete={() => toDoComplete(todo.text)}
-            onDelete={() => toDoDelete(todo.text)}/>
-          ))}
-        </ToDoList>
-
-        <CreateToDoButton />
-
-      </header>
-    </React.Fragment>
-  );
+  return(
+    <AppUI 
+      loading={loading}
+      error={error}
+      completedToDos = {completedToDos}
+      totalToDos = {totalToDos}
+      searchValue = {searchValue}
+      setSearchValue = {setSearchValue}
+      searchedTodos = {searchedTodos}
+      toDoComplete = {toDoComplete}
+      toDoDelete = {toDoDelete}
+    />
+  )
 }
 
 export default App;

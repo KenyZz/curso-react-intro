@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@300;500;700&family=Righteous&display=swap');
+
+.loading-box 
+{
+    text-align: center;
+    width: 30rem;
+    height: 18rem;
+    margin: auto;
+    border: none;
+    background-color: #ccc;
+    border-radius: 0.7rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.text-loading
+{
+    justify-content: center;
+    color: #454545;
+    font-family: 'Righteous', cursive;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    font-size: smaller;
+}
+
+.loading-box 
+{
+    text-align: center;
+    width: 30rem;
+    height: 18rem;
+    margin: auto;
+    border: transparent;
+    border-radius: 0.7rem;
+    background-color: #e2e5e7;
+    position: relative;
+}
+
+.loading-animation 
+{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0));
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: left -40px top 0;
+    animation: shine 1s ease infinite;
+    border-radius: 0.7rem;
+}
+
+.loader::after, .loader::before 
+{
+    animation: loader 2s linear infinite;
+    content: "";
+    border: 2px solid gray;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.loader::after 
+{
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation-delay: 1s;
+    margin: 0 0 0 140px;
+}
+
+.loader::before
+{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 140px;
+}
+
+@keyframes loader 
+{
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: right -40px top 0;
+    }
+}
