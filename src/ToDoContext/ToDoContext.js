@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { useLocalStorage } from "../app/useLocalStorage";
+import { AppUI } from "../app/AppUI";
 
 const ToDoContext = createContext();
 
@@ -11,6 +12,7 @@ function ToDoProvider({ children }) {
         error,
     } = useLocalStorage("POPSICLE_V1", []);
     const [searchValue, setSearchValue] = useState("");
+    const [openModal, setOpenModal] = useState(true);
 
     const completedToDos = todos.filter((todo) => !!todo.completed).length;
     const totalToDos = todos.length;
@@ -45,6 +47,8 @@ function ToDoProvider({ children }) {
                 searchedTodos,
                 toDoComplete,
                 toDoDelete,
+                openModal,
+                setOpenModal,
             }}
         >
             {children}

@@ -6,10 +6,20 @@ import { TodoItem } from '../ToDoItem/ToDoItem';
 import { ToDoLoading } from '../ToDoLoading/ToDoLoading';
 import { ToDoError } from '../ToDoError/ToDoError';
 import { ToDoEmpty } from '../ToDoEmpty/ToDoEmpty';
-import React from 'react';
+import React, { useContext } from 'react';
 import { ToDoContext } from '../ToDoContext/ToDoContext';
+import { Modal } from '../Modal/AllModal';
 
 function AppUI() {
+    const {
+        loading,
+        error,
+        searchedTodos,
+        toDoComplete,
+        toDoDelete,
+        openModal,
+    } = useContext(ToDoContext);
+    
     return (
         <React.Fragment>
             <header className="App-header">
@@ -22,7 +32,9 @@ function AppUI() {
                         error,
                         searchedTodos,
                         toDoComplete,
-                        toDoDelete
+                        toDoDelete,
+                        openModal,
+                        setOpenModal,
                     }) => (
                         <ToDoList>
                             {loading && <ToDoLoading />}
@@ -43,6 +55,12 @@ function AppUI() {
                 </ToDoContext.Consumer>
 
                 <CreateToDoButton />
+
+                {openModal && (
+                    <Modal>
+                        Funcion de crear ToDos
+                    </Modal>
+                )}
             </header>
         </React.Fragment>
     );
