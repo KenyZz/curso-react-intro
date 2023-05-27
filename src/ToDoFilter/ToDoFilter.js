@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ToDoContext } from "../ToDoContext/ToDoContext";
 import "./ToDoFilter.css"
 import searchIcon from "../assets/search-icon.svg";
 
-function ToDoFilter({ searchValue, setSearchValue}) {
+function ToDoFilter() {
+    const {
+        searchValue,
+        setSearchValue,
+    } = useContext(ToDoContext)
     return (
         <div className="search-container">
             <input 
