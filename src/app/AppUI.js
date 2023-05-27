@@ -13,22 +13,21 @@ function AppUI() {
     return (
         <React.Fragment>
             <header className="App-header">
-
                 <ToDoCounter />
                 <ToDoFilter />
 
                 <ToDoContext.Consumer>
-                    {(
+                    {({
                         loading,
                         error,
                         searchedTodos,
                         toDoComplete,
                         toDoDelete
-                    ) => (
+                    }) => (
                         <ToDoList>
                             {loading && <ToDoLoading />}
                             {error && <ToDoError />}
-                            {(!loading && searchedTodos.length === 0) && <ToDoEmpty />}
+                            {!loading && searchedTodos.length === 0 && <ToDoEmpty />}
 
                             {searchedTodos.map(todo => (
                                 <TodoItem
@@ -36,14 +35,14 @@ function AppUI() {
                                     text={todo.text}
                                     completed={todo.completed}
                                     onComplete={() => toDoComplete(todo.text)}
-                                    onDelete={() => toDoDelete(todo.text)} />
+                                    onDelete={() => toDoDelete(todo.text)}
+                                />
                             ))}
                         </ToDoList>
                     )}
                 </ToDoContext.Consumer>
 
                 <CreateToDoButton />
-
             </header>
         </React.Fragment>
     );
