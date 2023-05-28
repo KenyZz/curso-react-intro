@@ -8,6 +8,7 @@ import { ToDoError } from '../ToDoError/ToDoError';
 import { ToDoEmpty } from '../ToDoEmpty/ToDoEmpty';
 import React, { useContext } from 'react';
 import { ToDoContext } from '../ToDoContext/ToDoContext';
+import { ToDoBox } from "../ToDoBox/ToDoBox"
 import { Modal } from '../Modal/AllModal';
 
 function AppUI() {
@@ -61,7 +62,7 @@ function AppUI() {
 
                 {openModal && (
                     <Modal>
-                        Funcion To Do
+                        <ToDoBox />
                     </Modal>
                 )}
             </header>

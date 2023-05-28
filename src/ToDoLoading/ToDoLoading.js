@@ -5,7 +5,7 @@ function ToDoLoading() {
     return (
         <div className="loading-box">
             <div className="loading-animation"></div>
-            <p className="text-loading">Enviando mensaje a la NASA... Bromi, cargando...</p>
+            <p className="text-loading">Starting autodestruction in 10... Joke, loading...</p>
             <span className="loader"></span>
         </div>
     )

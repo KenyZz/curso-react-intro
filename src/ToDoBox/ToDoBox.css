@@ -1,0 +1,81 @@
+form
+{
+    width: 90%;
+    max-width: 300px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-family: "Righteous", cursive;
+    background-color: #A2A378;
+    padding: 33px 40px;
+}
+
+label
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(94, 85, 59);
+    margin-bottom: 26px;
+}
+
+textarea 
+{
+    background-color: #f9fbfc;
+    border: 2px solid #454545;
+    border-radius: 8px;
+    color: #1E1E1F;
+    font-size: 20px;
+    text-align: center;
+    padding: 12px;
+    height: 100px;
+    width: calc(100% - 25%);
+    font-family: "Righteous", cursive;
+}
+
+textarea::placeholder 
+{
+    color: #454545;
+    font-family: 'Righteous', cursive;
+    font-weight: 400px;
+}
+
+textarea:focus
+{
+    outline-color: #83764F;
+}
+.button-container
+{
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.ToDoBox-button
+{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #83764F;
+    font-weight: 400px;
+    width: 120px;
+    height: 50px;
+    border-radius: 100px;
+    border: none;
+    font-family: "Righteous", cursive;
+}
+
+.ToDoBox-button--cancel
+{
+    background: transparent;
+}
+
+.ToDoBox-button--done
+{
+    background: #E5F9DB;
+    width: 50%;
+}

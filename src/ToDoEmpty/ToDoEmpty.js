@@ -1,8 +1,9 @@
 import React from "react";
+import "./ToDoEmpty.css"
 
 function ToDoEmpty() {
     return (
-        <p>¡Crea tu primer tarea!</p>
+        <p>¡Make your first To'Do!</p>
     )
 }
 

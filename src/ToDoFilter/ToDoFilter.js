@@ -11,7 +11,7 @@ function ToDoFilter() {
     return (
         <div className="search-container">
             <input 
-            placeholder="Practicar piano, etc."
+            placeholder="Practice piano, etc."
             value={searchValue}
             onChange={(e) => {setSearchValue(e.target.value);}}
             />

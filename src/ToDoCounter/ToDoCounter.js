@@ -9,7 +9,7 @@ function ToDoCounter() {
     } = useContext(ToDoContext)
     return (
         <h1 className="ToDoCounter">
-            ¡¡Completaste {completedToDos} de {totalToDos} tareas!!
+            ¡¡You complete {completedToDos} of {totalToDos} to do's!!
         </h1>
     )
 }

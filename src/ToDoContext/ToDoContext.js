@@ -21,6 +21,15 @@ function ToDoProvider({ children }) {
         todo.text.toLowerCase().includes(searchValue.toLowerCase())
     );
 
+    const addToDo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            text,
+            completed: false,
+        });
+        saveToDos(newTodos);
+    }
+
     const toDoComplete = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -49,6 +58,7 @@ function ToDoProvider({ children }) {
                 toDoDelete,
                 openModal,
                 setOpenModal,
+                addToDo
             }}
         >
             {children}
