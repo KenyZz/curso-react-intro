@@ -12,7 +12,7 @@ function ToDoProvider({ children }) {
         error,
     } = useLocalStorage("POPSICLE_V1", []);
     const [searchValue, setSearchValue] = useState("");
-    const [openModal, setOpenModal] = useState(true);
+    const [openModal, setOpenModal] = useState(false);
 
     const completedToDos = todos.filter((todo) => !!todo.completed).length;
     const totalToDos = todos.length;

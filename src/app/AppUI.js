@@ -18,6 +18,7 @@ function AppUI() {
         toDoComplete,
         toDoDelete,
         openModal,
+        setOpenModal,
     } = useContext(ToDoContext);
     
     return (
@@ -54,11 +55,13 @@ function AppUI() {
                     )}
                 </ToDoContext.Consumer>
 
-                <CreateToDoButton />
+                <CreateToDoButton 
+                    setOpenModal={setOpenModal}
+                />
 
                 {openModal && (
                     <Modal>
-                        Funcion de crear ToDos
+                        Funcion To Do
                     </Modal>
                 )}
             </header>
