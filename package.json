@@ -10,9 +10,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -31,7 +31,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "file://wsl.localhost/Ubuntu/home/daniel/curso-react-intro/build/",
+  "homepage": "https://KenyZz.github.io.com",
   "devDependencies": {
     "gh-pages": "^5.0.0"
   }

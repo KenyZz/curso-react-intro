@@ -13,11 +13,6 @@ import { Modal } from '../Modal/AllModal';
 
 function AppUI() {
     const {
-        loading,
-        error,
-        searchedTodos,
-        toDoComplete,
-        toDoDelete,
         openModal,
         setOpenModal,
     } = useContext(ToDoContext);
